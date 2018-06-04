@@ -13,7 +13,7 @@ router.use(bodyParser.urlencoded({extended:true}));
 
 router.post('/', function(req, res, next) {
     var stringName = req.body.stringName;
-    var stringLength = stringName.length
+    var stringLength = stringName.length;
     res.send('{"String":"' + stringName + '", "length":' + stringLength + '}');
 });
 
