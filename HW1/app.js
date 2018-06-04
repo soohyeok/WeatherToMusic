@@ -28,15 +28,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/hw1', hw1Router)
 
-
-router.get('/admin', function (req, res, next) { ... })
-
-It is mounted with
-
-    const admin = require('../routes/admin')
-app.use('/user', admin)
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
