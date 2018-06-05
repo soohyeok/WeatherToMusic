@@ -12,16 +12,16 @@ router.use(bodyParser.urlencoded({extended:true}));
 // });
 
 router.post('/', function(req, res, next) {
-    var stringName = req.body.stringName;
-    var stringLength = stringName.length;
-    res.send('{"String":"' + stringName + '", "length":' + stringLength + '}');
+    var string = (req.body).string;
+    var stringLength = string.length;
+    res.send('{"string":"' + string + '", "length":' + stringLength + '}');
 });
 
 //{"String":"hello","length":5}
 
 
-router.get('/:String', function(req, res, next) {
-    (req.params).length =(req.params.String).length
+router.get('/:string', function(req, res, next) {
+    (req.params).length =((req.params).string).length
     res.json(req.params);
 });
 
