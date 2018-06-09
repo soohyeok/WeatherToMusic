@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const hw1Router = require('./routes/hw1');
+//const hw1Router = require('./routes/hw1');
 const hw2Router = require('./routes/hw2');
 
 const app = express();
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/hw1', hw1Router);
+//app.use('/hw1', hw1Router);
 app.use('/hw2', hw2Router);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
