@@ -1,4 +1,10 @@
-Steps to run 
+Objective:
+OAuth @ spotify
+brings weather information based on user input of city name from weater api
+and searches and presents relevent songs based on information from weather api in spotify api
+
+Instructions:
+Steps to run: 
 1) Run npm install inside the root folder
 2) execute npm install -g nodemon
 3) Copy Openweather api key and paste it in config/api.js
