@@ -2,8 +2,8 @@
 	<h3>Songs for the current weather</h3>
 	<ul>
 		<li ng-repeat="song in songs">
-			
-			<a ng-href="{{song.href}}">{{song.name}}</a>
+
+			<a href="{{song.link}}" ng-click="goToLink(song.link)" target="_blank">{{song.name}}</a>
 		</li>
 	</ul>
 </div>
