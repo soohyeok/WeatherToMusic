@@ -1,10 +1,10 @@
 const api = {
 	weather: {
-		key: 'insert open weather api key here'
+		key: '0bc76ae3e90954040cd248860bc9c6e8'
 	},
 	spotify:{
-		client_id: 'insert spotify client id here',
-		client_secret: 'insert spotify client secret here'
+		client_id: 'f903ee52b206433e83b6e676adf92759',
+		client_secret: '4cca42fee3fb45d287116b80585a6105'
 	}
 }
 

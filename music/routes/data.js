@@ -54,7 +54,8 @@ router.post('/songs', (req,res,next) => {
 	// console.log(req.app.locals.user);
 	db.findUser(req.body.username)
 	.then((user) => {
-		return getWeatherInfo(user.location)
+		let location = req.body.location !== null ? req.body.location : user.location;
+		return getWeatherInfo(location)
 		.then((info) => {
 			// console.log('From weather api: ', typeof(info));
 			return {

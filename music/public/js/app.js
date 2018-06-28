@@ -42,7 +42,24 @@ routerApp.service('usernameService', function(){
   }
 })
 
-routerApp.controller('formController', function($scope, $state , $http, $window, usernameService) {
+routerApp.service('locationService', function(){
+    var location='', getLocation, addLocation;
+
+    addLocation = function(city){
+        location = city;
+    }
+
+    getLocation = function(){
+        return location;
+    }
+
+    return {
+        getLocation,
+        addLocation
+    }
+})
+
+routerApp.controller('formController', function($scope, $state , $http, $window, usernameService, locationService) {
     console.log('Controller called');
     if($window.location.href.includes('callback')){
       $state.go('callback');
@@ -50,6 +67,8 @@ routerApp.controller('formController', function($scope, $state , $http, $window,
     $scope.sendData = function(){
     console.log($scope.username);
     console.log($scope.city);
+    locationService.addLocation($scope.city);
+
 
     $http({
       url: 'http://localhost:5000/location',
@@ -70,6 +89,7 @@ routerApp.controller('formController', function($scope, $state , $http, $window,
       else if(value.data.type==='status' && value.data.status==='OK'){
         // console.log('WTF', Object.keys(value));
         usernameService.addUsername(value.data.user)
+
         $state.go('songs')
       }
     })
@@ -79,23 +99,30 @@ routerApp.controller('formController', function($scope, $state , $http, $window,
     }
 });
 
-routerApp.controller('songsController', function($scope, $state, $http, usernameService){
+routerApp.controller('songsController', function($scope, $state, $http, $window, usernameService, locationService){
   console.log('Songs controller executed');
+  $scope.goToLink=function(url){
+      console.log('Trying to navigate to : ', url);
+      $window.open(url);
+  }
   $http({
     url: 'http://localhost:5000/songs',
     method: 'POST',
     data: {
-      username: usernameService.getUsername()
+      username: usernameService.getUsername(),
+        location: locationService.getLocation()
     }
   })
   .then((values) => {
     console.log('Got: ', values);
-    $scope.songs = values.data.filter((datum ) => {
+    const songs = values.data.map((datum ) => {
       return {
         link: datum.external_urls.spotify,
         name: datum.name
       }
     })
+      console.log('Filtered songs: ', songs);
+    $scope.songs = songs;
   })
   .catch((err) => {
     console.log('Error: ', err);
