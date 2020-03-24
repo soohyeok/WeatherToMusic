@@ -2,4 +2,4 @@
 mean stack
 
 
-Final project in music directory frontend + backend
+Final project in music directory
