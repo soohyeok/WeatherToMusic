@@ -1,7 +1,6 @@
 # Weather to music
 
-- very basic project to learn API pulls and basics of MEAN stack
-
+- very basic project to learn OAuth, Multiple API usage, basic MEAN stack
 ## Integration
 - Spotify OAuth
 - Spotify API
