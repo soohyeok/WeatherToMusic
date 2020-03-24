@@ -3,14 +3,13 @@
 - very basic project to learn OAuth, Multiple API usage, basic MEAN stack
 - lacks Angular, focused on learning backend routing works
 
-## Integration
-- Spotify OAuth
-- Spotify API
-- Weather API
-
 ## Features:
-- Finds weather information in given location and creates a playlist of music on spotify based on different weather information given in the location on Weather API
+- Spotify OAuth
+- Creates a playlist of music on Spotify for the user based on weather conditions of the input location.
 
+## APIs Used
+- Spotify
+- OpenWeatherMap
 
 ### Description:
 - HW1 and HW2 folder contains routing tasks required by MEAN Stack class @ Boston University
