@@ -1,5 +1,9 @@
-# MeanStack
-mean stack
+# Weather to music
 
+- very basic project to learn API pulls and basics of MEAN stack
 
-Final project in music directory
+Features
+- Spotify OAuth
+- Spotify API
+- Weather API
+- Finds weather information in given location and creates a playlist of music on spotify based on different weather information given in the location on Weather API
