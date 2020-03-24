@@ -1,7 +1,7 @@
 # Weather to music
 - fisrt project on Node.js & Express.js
 - very basic project to learn OAuth, Multiple API usage, basic MEAN stack
-- lacks Angular, focused on learning backend routing works
+- lacks Angular, focused on learning basic backend routing works
 
 ## Features:
 - Spotify OAuth
